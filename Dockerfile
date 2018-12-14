@@ -10,6 +10,8 @@ RUN apt-get update && \
         python-minimal \
         python-pkg-resources \
         python-m2crypto \
+        python-gtk2 \
+        python-appindicator \
         python-apsw \
         python-lxml \
      && \
