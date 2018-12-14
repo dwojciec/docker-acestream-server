@@ -12,16 +12,13 @@ RUN apt-get update && \
         python-m2crypto \
         python-apsw \
         python-lxml \
-        && \
-	apt-get clean && \
-	rm --force --recursive /var/lib/apt/lists && \
-	mkdir -p /opt/acestream && \
-	curl --silent "http://dl.acestream.org/linux/acestream_${VERSION}_x86_64.tar.gz" \
+     && \
+     rm --force --recursive /var/lib/apt/lists && \
+     mkdir -p /opt/acestream && \
+     curl --silent "http://dl.acestream.org/linux/acestream_${VERSION}_x86_64.tar.gz" \
         | tar --extract --gzip --strip-components=1 -C /opt/acestream && \
-        echo '/opt/acestream/lib' >> /etc/ld.so.conf && \
-        /sbin/ldconfig
-	curl --silent "http://dl.acestream.org/linux/acestream_${VERSION}_x86_64.tar.gz" | \
-		tar --extract --gzip && \
+     echo '/opt/acestream/lib' >> /etc/ld.so.conf && \
+     /sbin/ldconfig
 EXPOSE 6878
 
 CMD ["/opt/acestream/acestreamengine","--client-console"]
