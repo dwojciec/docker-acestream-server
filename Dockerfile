@@ -21,4 +21,4 @@ RUN apt-get update && \
      /sbin/ldconfig
 EXPOSE 6878
 
-CMD ["/opt/acestream/acestreamengine","--client-console","--log-file ~/.ACEStream/logs/acestream-engine.log","--live-cache-type memory","--live-disk-cache-size 0","--live-mem-cache-size 1073741824","--log-backup-count 3"]
+CMD ["/opt/acestream/acestreamengine","--client-gtk","--log-file ~/.ACEStream/logs/acestream-engine.log","--live-cache-type memory","--live-disk-cache-size 0","--live-mem-cache-size 1073741824","--log-backup-count 3"]
