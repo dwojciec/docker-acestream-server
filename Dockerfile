@@ -2,15 +2,17 @@ FROM debian:8-slim
 
 ENV VERSION="3.1.16_debian_8.7"
 
-RUN apt-get update && apt-get upgrade --yes && \
-	apt-get install --no-install-recommends --yes \
-		curl \
-		libpython2.7 \
-		net-tools \
-		python-apsw \
-		python-lxml \
-		python-m2crypto \
-		python-pkg-resources && \
+RUN apt-get update && \
+    apt-get install -yq --no-install-recommends \
+        curl \
+        libpython2.7 \
+        net-tools \
+        python-minimal \
+        python-pkg-resources \
+        python-m2crypto \
+        python-apsw \
+        python-lxml \
+        && \
 	apt-get clean && \
 	rm --force --recursive /var/lib/apt/lists && \
 	mkdir -p /opt/acestream && \
