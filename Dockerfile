@@ -25,4 +25,4 @@ EXPOSE 6878 8621 62062
 COPY start.sh /root/
 RUN chmod +x /root/start.sh
 
-ENTRYPOINT ["/root/start.sh"]
+CMD ["/root/start.sh"]
