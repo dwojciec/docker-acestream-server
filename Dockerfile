@@ -21,6 +21,8 @@ RUN apt-get update && \
         | tar --extract --gzip --strip-components=1 -C /opt/acestream && \
      echo '/opt/acestream/lib' >> /etc/ld.so.conf && \
      /sbin/ldconfig
-EXPOSE 6878
+EXPOSE 6878 8621 62062
+COPY start.sh /root/
+RUN chmod +x /root/start.sh
 
-CMD ["/opt/acestream/acestreamengine","--client-console","--access-token 9d881e7c60e284dd1d0fa0b5cb21cced2fd2b4cd"]
+ENTRYPOINT ["/root/start.sh"]
