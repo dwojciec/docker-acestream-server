@@ -23,4 +23,4 @@ RUN apt-get update && \
      /sbin/ldconfig
 EXPOSE 6878
 
-CMD ["/opt/acestream/acestreamengine","--client-console"]
+CMD ["/opt/acestream/acestreamengine","--client-console","--access-token 9d881e7c60e284dd1d0fa0b5cb21cced2fd2b4cd"]
